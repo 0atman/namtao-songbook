@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>The NAMTAO Songbook</title>
+    <style type="text/css">
+      body {
+          font-family: sans-serif;
+
+          /* Background pattern from Toptal Subtle Patterns
+           * https://www.toptal.com/designers/subtlepatterns/ecailles/ */
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAUCAYAAADLP76nAAAA0UlEQVR42u2VSQqFMBBE6/5n6LN9ccDZqCjOwk8FPEEWyaIXRUL6daBpisLzPEIty4Ku65DnOdI0lbqupe97GccR53niui5KYuNxHAe2bcMwGJRliaIopG1bWJBv/ER4kmNjbDzsVLYwUJzQFed5FsoY4+rf5FRsPKqqIiT7vn9TcYVuRfZN1nUl6JrtGqPjkWUZp3Xw+76u4b5vNvDOdco0TWiaBr8kiY6Hn5nC855mCs/Dz0zheU8zhec9zRSe1yTWJNYk1iTWJNYk1iQOyf8BD7JVhlKAJvgAAAAASUVORK5CYII=)
+      }
+
+      #content {
+        border: 3px solid #eaeaea;
+        border-bottom: none;
+        width: max-content;
+        margin: 2em auto 0 auto;
+        background-color: white;
+      }
+
+      @media (max-width: 1000px) {
+        body { background: none; }
+        #content { border: none; }
+      }
+
+      h1, h2, h3 { font-variant: small-caps; }
+
+      a, a:link , a:visited , a:hover , a:active {
+        color: blue;
+        text-decoration: none;
+      }
+
+      .pad { padding: 2em; }
+      .ws-pre { white-space: pre; }
+      .faint { color: #999999; }
+      .faint a, .faint a:link, .faint a:visited, .faint a:hover, .faint a:active { color: #999999; }
+
+      header {
+        text-align: center;
+        margin: 7em 0 9em 0;
+      }
+
+      header .note {
+        margin-top: 5em;
+      }
+
+      footer {
+        display: block;
+        width: max-content;
+        margin: 0 auto 8em auto;
+        padding: 0;
+      }
+
+      section.song { margin: 4em 0; }
+      section.song h2 { text-decoration: underline; }
+      section.song h4 { margin: 0; }
+      .song-header {
+        text-align: center;
+        margin: 1em 0;
+      }
+
+      hr.separator {
+        border: none;
+        border-top: 3px solid #eaeaea;
+      }
+
+      /* *** Song content styling *** */
+
+      /* Block structure, done with customized uls */
+
+      ul.blocks {
+        list-style-type: none;
+        padding-left: 1em;
+      }
+
+      ul.blocks li::before {
+        display: inline-block;
+        min-width: 0.5em;
+        content: attr(data-label);
+        font-weight: bold;
+        font-size: 0.9em;
+        margin-right: 0.5em;
+      }
+
+      ul.blocks li {
+        padding-left: 1em;
+        text-indent: -1em;
+        margin: 1em 0;
+      }
+
+      /* Chords, done with inline tables */
+
+      table.chord {
+        display: inline-table;
+        border-collapse: collapse;
+        white-space: pre;
+        vertical-align: bottom;
+      }
+      table.chord tr, table.chord td {
+        margin: 0;
+        padding: 0;
+      }
+
+      tr.chord {
+        font-weight: bold;
+        color: red;
+      }
+
+      tr.chord-alt { color: blue; }
+
+      /* Bulletlist */
+
+      ul.bullet-list li {
+        list-style-type: initial;
+        margin: 0.1em 0;
+      }
+
+      /* imgs */
+
+      .blocks img.center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .blocks img.right {
+        float: right;
+      }
+
+      /* pre */
+
+      .blocks pre {
+        margin-left: 1em;
+      }
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+<div id="content">
+  <header class="pad">
+    <h1>The NAMTAO Songbook</h1>
+    
+      <h3>Barding for fun and profit</h3>
+    
+    
+      <p class="note">namtao.com</p>
+    
+  </header>
+  <hr class="separator">
+
+  <div id="index" class="pad">
+    <h2>Contents</h2>
+    <ol>
+    
+      <li><a href="#song-0">Johnny B. Goode</a></li>
+    
+      <li><a href="#song-1">Space Doggity</a></li>
+    
+    </ol>
+  </div>
+
+  <hr class="separator">
+  
+    <section id="song-0" class="song pad">
+      <div class="song-header">
+        <h2>Johnny B. Goode</h2>
+        <h4>Chuck Berry</h4>
+      </div>
+
+      <ul class="blocks">
+        
+        
+  <li data-label="1.">Deep <table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>down in Louisiana, close to New Orleans,</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>Way back up in the woods among the evergreens,</td></tr>
+</table><br>There <table class="chord">
+  <tr class="chord"><td>D</td></tr>
+  
+  <tr><td>stood a log cabin made of earth and wood</td></tr>
+</table><br>Where <table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>lived a country boy named Johnny B. Goode</td></tr>
+</table><br>Who <table class="chord">
+  <tr class="chord"><td>E</td></tr>
+  
+  <tr><td>never ever learned to read or write so well,</td></tr>
+</table><br>But he could <table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>play the guitar just like a ringin&#x27; a bell.</td></tr>
+</table></li>
+
+  <li data-label="[Chorus].">Go! <table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>Go! Go, Johnny, go! Go!</td></tr>
+</table><br>Go, Johnny, go! <table class="chord">
+  <tr class="chord"><td>D</td></tr>
+  
+  <tr><td>Go!</td></tr>
+</table><br>Go, Johnny, go!<br><table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>Go! Go, Johnny, go! </td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>E</td></tr>
+  
+  <tr><td>Go! Johnny B. </td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>Goode</td></tr>
+</table></li>
+
+  <li data-label="2.">He <table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>used to carry his guitar in a gunny sack,</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>Go sit beneath the tree by the railroad track.</td></tr>
+</table><br>Old <table class="chord">
+  <tr class="chord"><td>D</td></tr>
+  
+  <tr><td>engineers would see him sittin&#x27; in the shade,</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>Strummin&#x27; with the rhythm that the drivers made.</td></tr>
+</table><br>When <table class="chord">
+  <tr class="chord"><td>E</td></tr>
+  
+  <tr><td>people passed him by they would stop and say,</td></tr>
+</table><br>&#x27;oh, my but <table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>that little country boy could play&#x27;</td></tr>
+</table><br><em>[Chorus].</em></li>
+
+  <li data-label="3.">His <table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>mother told him, &#x27;someday you will be a man,</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>You will be the leader of a big ol&#x27; band.</td></tr>
+</table><br>Many <table class="chord">
+  <tr class="chord"><td>D</td></tr>
+  
+  <tr><td>people comin&#x27; from miles around</td></tr>
+</table><br>Will <table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>hear you play your music when the sun go down.</td></tr>
+</table><br>Maybe <table class="chord">
+  <tr class="chord"><td>E</td></tr>
+  
+  <tr><td>someday your name&#x27;ll be in lights,</td></tr>
+</table><br>Sayin&#x27; <table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>&#x27;Johnny B. Goode tonight&#x27;</td></tr>
+</table><br><em>[Chorus].</em></li>
+
+      </ul>
+    </section>
+    <hr class="separator">
+  
+    <section id="song-1" class="song pad">
+      <div class="song-header">
+        <h2>Space Doggity</h2>
+        <h4>Jonathan Coulton</h4>
+      </div>
+
+      <ul class="blocks">
+        
+        
+  <li data-label="1."><table class="chord">
+  <tr class="chord"><td>E5</td></tr>
+  
+  <tr><td>The cage is very small</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>D5/E</td></tr>
+  
+  <tr><td>A tiny silver ball</td></tr>
+</table><br>That <table class="chord">
+  <tr class="chord"><td>A/E</td></tr>
+  
+  <tr><td>makes you a hero</td></tr>
+</table><br>The <table class="chord">
+  <tr class="chord"><td>Am/E</td></tr>
+  
+  <tr><td>moment you step inside</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>E5</td></tr>
+  
+  <tr><td>The world is watching you</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>D5/E</td></tr>
+  
+  <tr><td>What you&#x27;re about to do</td></tr>
+</table><br>Will <table class="chord">
+  <tr class="chord"><td>A/E</td></tr>
+  
+  <tr><td>live on forever</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>Am/E</td></tr>
+  
+  <tr><td>Even though you&#x27;ll be dea</td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>G#m7</td></tr>
+  
+  <tr><td>d</td></tr>
+</table><br>And gon<table class="chord">
+  <tr class="chord"><td>C#7</td></tr>
+  
+  <tr><td>e</td></tr>
+</table><br>Buckle <table class="chord">
+  <tr class="chord"><td>F#m7</td></tr>
+  
+  <tr><td>up</td></tr>
+</table><br>We&#x27;re about to turn the <table class="chord">
+  <tr class="chord"><td>A/B</td></tr>
+  
+  <tr><td>engines </td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>B7</td></tr>
+  
+  <tr><td>on.</td></tr>
+</table></li>
+
+  <li data-label="2."><table class="chord">
+  <tr class="chord"><td>E5</td></tr>
+  
+  <tr><td>Hello from Sputnik 2</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>D5/E</td></tr>
+  
+  <tr><td>I am receiving you</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>A/E</td></tr>
+  
+  <tr><td>Thanks for the dog food</td></tr>
+</table><br>I&#x27;m <table class="chord">
+  <tr class="chord"><td>Am/E</td></tr>
+  
+  <tr><td>somewhere above you now</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>E5</td></tr>
+  
+  <tr><td>Guess what Malashenkov?</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>D5/E</td></tr>
+  
+  <tr><td>I took the collar off</td></tr>
+</table><br>I&#x27;m <table class="chord">
+  <tr class="chord"><td>A/E</td></tr>
+  
+  <tr><td>holding my own leash</td></tr>
+</table><br>And <table class="chord">
+  <tr class="chord"><td>Am/E</td></tr>
+  
+  <tr><td>walking myself outsid</td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>G#m7</td></tr>
+  
+  <tr><td>e</td></tr>
+</table><br>This doo<table class="chord">
+  <tr class="chord"><td>C#7</td></tr>
+  
+  <tr><td>r</td></tr>
+</table><br>I don&#x27;t <table class="chord">
+  <tr class="chord"><td>F#m7</td></tr>
+  
+  <tr><td>think</td></tr>
+</table><br>I want to be a <table class="chord">
+  <tr class="chord"><td>A/B</td></tr>
+  
+  <tr><td>good dog </td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>B7</td></tr>
+  
+  <tr><td>anymor</td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>E E/G# E/B</td></tr>
+  
+  <tr><td>e</td></tr>
+</table></li>
+
+  <li data-label="[Chorus].">Now I&#x27;m <table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>floating </td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>E/G#</td></tr>
+  
+  <tr><td>free</td></tr>
+</table><br>And the <table class="chord">
+  <tr class="chord"><td>F#m7</td></tr>
+  
+  <tr><td>moon&#x27;s with </td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>E</td></tr>
+  
+  <tr><td>me</td></tr>
+</table><br>And it&#x27;s <table class="chord">
+  <tr class="chord"><td>F#m7</td></tr>
+  
+  <tr><td>bright enough</td></tr>
+</table><br>To <table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>light the dark</td></tr>
+</table><br>And <table class="chord">
+  <tr class="chord"><td>E/G#</td></tr>
+  
+  <tr><td>it&#x27;s so </td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>A</td></tr>
+  
+  <tr><td>high up </td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>E/G#</td></tr>
+  
+  <tr><td>here</td></tr>
+</table><br>And the <table class="chord">
+  <tr class="chord"><td>F#m7</td></tr>
+  
+  <tr><td>stars so </td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>E</td></tr>
+  
+  <tr><td>clear</td></tr>
+</table><br>Are they <table class="chord">
+  <tr class="chord"><td>F#m7</td></tr>
+  
+  <tr><td>close enough?</td></tr>
+</table><br>Will they <table class="chord">
+  <tr class="chord"><td>F#m7b5/A</td></tr>
+  
+  <tr><td> hear me</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>Am/C</td></tr>
+  
+  <tr><td>bark from here?</td></tr>
+</table><br><br><strong>[Solo]</strong></li>
+
+  <li data-label="3."><table class="chord">
+  <tr class="chord"><td>E5</td></tr>
+  
+  <tr><td>Moscow to Sputnik 2</td></tr>
+</table><br><table class="chord">
+  <tr class="chord"><td>D5/E</td></tr>
+  
+  <tr><td>I think we&#x27;re losing you</td></tr>
+</table><br>Your <table class="chord">
+  <tr class="chord"><td>A/E</td></tr>
+  
+  <tr><td>life signs are fading</td></tr>
+</table><br>We <table class="chord">
+  <tr class="chord"><td>Am/E</td></tr>
+  
+  <tr><td>can&#x27;t really say that we&#x27;r</td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>G#m7</td></tr>
+  
+  <tr><td>e</td></tr>
+</table><br>Surprise<table class="chord">
+  <tr class="chord"><td>C#7</td></tr>
+  
+  <tr><td>d</td></tr>
+</table><br>It&#x27;s a <table class="chord">
+  <tr class="chord"><td>F#m7</td></tr>
+  
+  <tr><td>shame</td></tr>
+</table><br>There is always something <table class="chord">
+  <tr class="chord"><td>A/B</td></tr>
+  
+  <tr><td>that gets </td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>B7</td></tr>
+  
+  <tr><td>compro</td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>E</td></tr>
+  
+  <tr><td>mise</td></tr>
+</table><table class="chord">
+  <tr class="chord"><td>E/G# E/B</td></tr>
+  
+  <tr><td>d</td></tr>
+</table><br><br><em>[Chorus].</em></li>
+
+      </ul>
+    </section>
+    <hr class="separator">
+  
+
+  
+    <p class="pad">(probare)</p>
+    <hr class="separator">
+  
+</div>
+<footer class="faint">
+  Created with <strong><a href="https://github.com/vojtechkral/bard">bard</a></strong> version 1.0.3.
+</footer>
+</body>
+</html>
+

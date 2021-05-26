@@ -1,0 +1,24 @@
+songs = [
+    "johnny-b-goode.md",
+    "space-doggity.md"
+]
+
+notation = "english"
+
+#[[output]]
+#file = "songbook.tex"
+#template = "pdf.hbs"
+#font = "DejaVu Sans"
+#process = "xelatex {{file}}"
+
+[[output]]
+file = "songbook.html"
+font = "DejaVu Sans"
+template = "html.hbs"
+
+[book]
+title = "The NAMTAO Songbook"
+subtitle = "Barding for fun and profit"
+chorus_label = "[Chorus]"
+title_note = "namtao.com"
+backmatter = "(probare)"

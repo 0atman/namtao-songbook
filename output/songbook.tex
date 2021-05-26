@@ -1,0 +1,384 @@
+
+
+
+
+\documentclass[12pt,a5paper,openany]{memoir}
+\setheadfoot{0pt}{0pt}
+\setlrmarginsandblock{2cm}{2cm}{*}
+\setulmarginsandblock{.75cm}{1cm}{*}
+\checkandfixthelayout
+\raggedbottom
+
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[defaultlines=5,all]{nowidow}
+\usepackage[pdfusetitle,colorlinks=true]{hyperref}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+%% Page style
+\makepagestyle{songs}
+\makeoddfoot{songs}{}{}{\thepage}
+\makeevenfoot{songs}{\thepage}{}{}
+% Patch cleardoublepage to not get blank pages after title & contents pages:
+\renewcommand\cleardoublepage{\clearpage}
+% Suppress page numbers in the toc/frontmatter:
+\aliaspagestyle{chapter}{empty}
+
+%% Fonts
+\setmainfont[Ligatures=TeX]{DejaVu Sans}
+
+%% Spacings
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\parskip}{1mm}
+
+%% ToC style
+% Hide the title of the ToC:
+\renewcommand\tocheadstart{}
+\renewcommand\printtoctitle[1]{}
+\renewcommand\aftertoctitle{}
+% Hide section numbers in the ToC:
+\renewcommand\numberline[1]{}
+\renewcommand\cftdotsep{1}
+
+%% Hyperlinks setup
+\hypersetup{
+  bookmarks=true,
+  linkcolor=.,
+  urlcolor=blue,
+  pdfcreator=bard v. 1.0.3 - https://github.com/vojtechkral/bard,
+}
+
+%% Song title and subtitle formats
+\titleformat{\section}
+  {\centering\large\bfseries}{}{0pt}{\underline}
+\titlespacing*{\section}
+  {0pt}{0pt}{.25ex}
+\newcommand\songtitle[1]{%
+  % This is a trick to only layout a song on the current page
+  % if it fits, otherwise a pagebreak is inserted
+  \FloatBlock
+  \vfil
+  \pagebreak[2]
+  \vfilneg
+  \section{#1}
+}
+\newcommand\subtitle[1]{%
+  \emph{#1}
+}
+
+%% Verse and Chord layout commands
+\makeatletter
+% The verse & label layout code was written by Jonathan P. Spratte
+% under the Beerware license: As long as you retain this notice you
+% can do whatever you want with this stuff. If we meet some day, and you think
+% this stuff is worth it, you can buy me a beer in return. Jonathan P. Spratte
+\newlength\verse@indent
+\newlength\verse@labelsep
+\newlength\verse@vskip
+\AtBeginDocument{% setting AtBeginDocument since earlier we can't rely on em being correct
+  \verse@indent=12mm
+  \verse@labelsep=2mm
+  \verse@vskip=\smallskipamount
+}
+\newcommand\Verse[1]{%
+    \par
+    \vskip\verse@vskip
+    \noindent\kern-\verse@indent
+    \sbox0{\textbf{\footnotesize{#1}}}%
+    \ifdim\wd0>\dimexpr\verse@indent-\verse@labelsep\relax
+      \usebox0\kern\verse@labelsep
+    \else
+      \makebox[\verse@indent][l]{\usebox0}%
+    \fi
+    \ignorespaces
+}
+
+\newcommand{\Chord}{\@ifstar{\@Chordalt}{\@Chord}}
+\newcommand{\@Chord}[2]{%
+  \begin{tabular}[b]{l}%
+    \textbf{\textcolor{red}{#1}}\\%  % The chord
+    #2\mbox{}\end{tabular}%          % The lyrics
+}
+\newcommand{\@Chordalt}[3]{%
+  \begin{tabular}[b]{l}%
+    \textbf{\textcolor{red}{#1}}\\%  % The chord
+    \textbf{\textcolor{blue}{#2}}\\% % The alt chord
+    #3\mbox{}\end{tabular}%          % The lyrics
+}
+\makeatother
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% Metadata
+\title{My Songbook}
+
+% Document
+\begin{document}
+
+%% Title page
+\frontmatter
+\begin{titlingpage}
+  \begin{vplace}[0.5]
+    \begin{center}
+      \Huge{\textbf{My Songbook}} \\
+      \vspace{0.5cm}
+      \LARGE{(You can edit that title!)} \\
+    \end{center}
+  \end{vplace}
+
+  \mbox{}
+  \vfill
+  \begin{center}\small{(And this note too...)}\end{center}
+\end{titlingpage}
+
+%% Contents page
+\tableofcontents*
+
+%% Songs
+\mainmatter
+
+\pagestyle{songs}
+
+  %% song 0
+  \songtitle{Yippie Yeah}
+
+  \begin{center}
+      \subtitle{(You can edit this content!)}
+    \end{center}
+  
+  
+
+  
+  \Verse{1.} \Chord{Am}{Yippie~yea~}\Chord{C}{oh!}\\
+Yippie~yea~\Chord{Am}{yay!}
+
+    \vspace{\parskip}
+
+  
+\Verse{2.} Deep~\Chord{A}{down~in~Louisiana,~close~to~New~Orleans,}\\
+\Chord{A}{Way~back~up~in~the~woods~among~the~evergreens,}\\
+There~\Chord{D}{stood~a~log~cabin~made~of~earth~and~wood}\\
+Where~\Chord{A}{lived~a~country~boy~named~Johnny~B.~Goode}\\
+Who~\Chord{E}{never~ever~learned~to~read~or~write~so~well,}\\
+But~he~could~\Chord{A}{play~the~guitar~just~like~a~ringin'~a~bell.}
+
+    \vspace{\parskip}
+
+  
+\Verse{Ch.} Go!~\Chord{A}{Go!~Go,~Johnny,~go!~Go!}\\
+Go,~Johnny,~go!~\Chord{D}{Go!}\\
+Go,~Johnny,~go!\\
+\Chord{A}{Go!~Go,~Johnny,~go!~}\Chord{E}{Go!~Johnny~B.~}\Chord{A}{Goode}
+
+    \vspace{\parskip}
+
+   {\lbrack}Verse{\rbrack}
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim} A
+\end{verbatim}
+\Verse{} He~used~to~carry~his~guitar~in~a~gunny~sack,
+
+    \vspace{\parskip}
+
+   A
+
+    \vspace{\parskip}
+
+   Go~sit~beneath~the~tree~by~the~railroad~track.
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}  D
+\end{verbatim}
+\Verse{} Old~engineers~would~see~him~sittin'~in~the~shade,
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}  A
+\end{verbatim}
+\Verse{} Strummin'~with~the~rhythm~that~the~drivers~made.
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}E
+\end{verbatim}
+\Verse{} When~people~passed~him~by~they~would~stop~and~say,
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}         A
+\end{verbatim}
+\Verse{} 'oh,~my~but~that~little~country~boy~could~play'
+
+    \vspace{\parskip}
+
+   {\lbrack}Chorus{\rbrack}
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}A
+\end{verbatim}
+\Verse{} Go!~Go!~Go,~Johnny,~go!~Go!
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}             D
+\end{verbatim}
+\Verse{} Go,~Johnny,~go!~Go!
+
+    \vspace{\parskip}
+
+   Go,~Johnny,~go!
+
+    \vspace{\parskip}
+
+   A~~~~~~~~~~~~~~~~~~~E~~~~~~~~~~~~~~A
+
+    \vspace{\parskip}
+
+   Go!~Go,~Johnny,~go!~Go!~Johnny~B.~Goode
+
+    \vspace{\parskip}
+
+   {\lbrack}Verse{\rbrack}
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim} A
+\end{verbatim}
+\Verse{} His~mother~told~him,~'someday~you~will~be~a~man,
+
+    \vspace{\parskip}
+
+   A
+
+    \vspace{\parskip}
+
+   You~will~be~the~leader~of~a~big~ol'~band.
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}  D
+\end{verbatim}
+\Verse{} Many~people~comin'~from~miles~around
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}  A
+\end{verbatim}
+\Verse{} Will~hear~you~play~your~music~when~the~sun~go~down.
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}E
+\end{verbatim}
+\Verse{} Maybe~someday~your~name'll~be~in~lights,
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}         A
+\end{verbatim}
+\Verse{} Sayin'~'Johnny~B.~Goode~tonight''
+
+    \vspace{\parskip}
+
+   {\lbrack}Chorus{\rbrack}
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}A
+\end{verbatim}
+\Verse{} Go!~Go!~Go,~Johnny,~go!~Go!
+
+    \vspace{\parskip}
+
+  
+
+  \begin{verbatim}             D
+\end{verbatim}
+\Verse{} Go,~Johnny,~go!~Go!
+
+    \vspace{\parskip}
+
+   Go,~Johnny,~go!
+
+    \vspace{\parskip}
+
+   A~~~~~~~~~~~~~~~~~~~E~~~~~~~~~~~~~~A
+
+    \vspace{\parskip}
+
+   Go!~Go,~Johnny,~go!~Go!~Johnny~B.~Goode
+
+    \vspace{\parskip}
+
+  
+
+
+
+\backmatter
+\pagestyle{empty}
+
+
+
+\end{document}
